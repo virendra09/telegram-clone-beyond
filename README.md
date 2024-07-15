@@ -1,3 +1,7 @@
+### This is the host link of Telegram clone with API integration for BeyondChats  Assignment.
+https://telegram-clone-beyond.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
