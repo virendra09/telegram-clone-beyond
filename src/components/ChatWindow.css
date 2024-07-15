@@ -1,0 +1,14 @@
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    background-image: url(../assets/chatbox-background1.png);
+  }
+  
+  .chat-header {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+  

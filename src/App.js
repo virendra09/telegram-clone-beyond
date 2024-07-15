@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ChatList from './components/ChatList';
+import ChatWindow from './components/ChatWindow';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [selectedChat, setSelectedChat] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleSelectChat = (chat) => {
+    setSelectedChat(chat);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={`app ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+      <header className="header">
+        <h1>Telegram Clone</h1>
+        <button onClick={toggleDarkMode}>
+          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
       </header>
+      <div className="content">
+        <ChatList onSelectChat={handleSelectChat} />
+        {selectedChat && <ChatWindow chat={selectedChat} />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
